@@ -113,18 +113,5 @@ sub search ($self, $searchterm, $params = {}) {
   return $self->pg->db->query($sql, $pattern, $pattern, $pattern, $limit, $offset)->hashes->to_array;
 }
 
-# Get statistics about examples
-sub stats ($self, $params = {}) {
-  my $sql = q{
-    SELECT
-      COUNT(*) as total,
-      COUNT(CASE WHEN status = 'active' THEN 1 END) as active,
-      COUNT(CASE WHEN status = 'inactive' THEN 1 END) as inactive,
-      COUNT(CASE WHEN created > NOW() - INTERVAL '7 days' THEN 1 END) as recent
-    FROM example.example
-  };
-
-  return $self->pg->db->query($sql)->hash;
-}
 
 1;
