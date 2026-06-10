@@ -8,7 +8,9 @@ WriteMakefile(
   NAME => 'Samizdat::Plugin::Example', VERSION => '0.01',
   ABSTRACT => 'Example module — reference scaffolding for Samizdat plugins',
   AUTHOR => 'Hans Svensson <hans@alipang.se>', LICENSE => 'artistic_2', MIN_PERL_VERSION => '5.036',
-  PM => \%pm, PREREQ_PM => { 'Mojolicious' => '9.0' }, TEST_REQUIRES => { 'Test::More' => 0 },
+  PM => \%pm, PREREQ_PM        => {
+    'Mojolicious' => '9.0',
+  }, TEST_REQUIRES => { 'Test::More' => 0 },
   META_MERGE => { 'meta-spec' => { version => 2 },
     prereqs => { runtime => { requires => { 'Samizdat' => 0 } } },
     no_index => { directory => ['lib/Samizdat/resources'] } },
