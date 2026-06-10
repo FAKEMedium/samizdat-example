@@ -1,0 +1,5 @@
+Revision history for Samizdat-Plugin-Example
+
+0.01
+    - Extracted from the Samizdat monorepo (history-preserving). The reference
+      example module: a clean Plugin+Controller+Model+templates+migration trio.
