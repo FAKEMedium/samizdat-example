@@ -17,15 +17,13 @@ jobs:
           repository: FAKEMedium/Samizdat
           path: .samizdat-core
 
-      - name: Set up Perl + dependencies
+      - name: Set up Perl
         uses: shogo82148/actions-setup-perl@v1
         with:
           perl-version: '5.38'
-          install-modules-with: cpanm
-          install-modules: |
-            Mojolicious
-            Hash::Merge
-            YAML::XS
+
+      - name: Install dependencies
+        run: cpanm --notest --quiet Mojolicious Hash::Merge YAML::XS
 
       - name: Build and test (core on PERL5LIB)
         env:
